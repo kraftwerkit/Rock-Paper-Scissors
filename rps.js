@@ -15,12 +15,14 @@ Step 6: Report the winner and final score.
 
 
 /*Get the Computer Choice */
+
 function getComputerChoice () {
-    if (Math.floor(Math.random() * 61) >= 0 && (Math.floor(Math.random() * 61) <= 20)) {
+    let random = Math.floor(Math.random() * 61);
+    if (random >= 0 && random <= 20) {
         return "Rock";
     }
 
-    else if (Math.floor(Math.random() * 61) >= 21 && (Math.floor(Math.random() * 61) <= 40)) {
+    else if (random >= 21 && random <= 40) {
         return "Paper";
     }
 
@@ -32,4 +34,23 @@ function getComputerChoice () {
 /*A single round of RPS */
 
 function playRound (playerSelection,computerSelection) {
+playerSelection = prompt("Rock, Paper or Scissors?")
+computerSelection = getComputerChoice();
+if (playerSelection === computerSelection) {
+    return `It's a tie! You both picked ${playerSelection}`;
 }
+
+else {
+    if ((playerSelection === "Rock" && computerSelection === "Scissors") || 
+        (playerSelection === "Paper" && computerSelection === "Rock") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper")) {
+            return `You win! ${playerSelection} beats ${computerSelection}`;
+        }
+
+    else {
+        return `You lose! ${computerSelection} beats ${playerSelection}`
+    }
+}
+}
+
+console.log(playRound())
