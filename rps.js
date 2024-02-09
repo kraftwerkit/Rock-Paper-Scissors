@@ -19,38 +19,41 @@ Step 6: Report the winner and final score.
 function getComputerChoice () {
     let random = Math.floor(Math.random() * 61);
     if (random >= 0 && random <= 20) {
-        return "rock";
+        return "Rock";
     }
 
     else if (random >= 21 && random <= 40) {
-        return "paper";
+        return "Paper";
     }
 
     else {
-        return "scissors";
+        return "Scissors";
     }
 }
 
 /*A single round of RPS */
 function playRound (playerSelection,computerSelection) {
-playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase()
+playerSelection = prompt("Rock, Paper or Scissors?");
+
+let finalPlayerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+
 computerSelection = getComputerChoice();
-if (playerSelection === computerSelection) {
-    return `It's a tie! You both picked ${playerSelection} You: ${playerScore} Computer: ${computerScore} `;
+if (finalPlayerSelection === computerSelection) {
+    return `It's a tie! You both picked ${finalPlayerSelection} You: ${playerScore} Computer: ${computerScore} `;
 }
 
 else {
-    if ((playerSelection === "rock" && computerSelection === "scissors") || 
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")) {
+    if ((finalPlayerSelection === "Rock" && computerSelection === "Scissors") || 
+        (finalPlayerSelection === "Paper" && computerSelection === "Rock") ||
+        (finalPlayerSelection === "Scissors" && computerSelection === "Paper")) {
             playerScore++
-            return `You win! ${playerSelection} beats ${computerSelection} You: ${playerScore} Computer: ${computerScore}`;
+            return `You win! ${finalPlayerSelection} beats ${computerSelection} You: ${playerScore} Computer: ${computerScore}`;
 
         }
 
     else {
         computerScore++
-        return `You lose! ${computerSelection} beats ${playerSelection} You: ${playerScore} Computer: ${computerScore}`
+        return `You lose! ${computerSelection} beats ${finalPlayerSelection} You: ${playerScore} Computer: ${computerScore}`
     }
 }
 }
