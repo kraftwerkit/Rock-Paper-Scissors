@@ -32,25 +32,52 @@ function getComputerChoice () {
 }
 
 /*A single round of RPS */
-
 function playRound (playerSelection,computerSelection) {
 playerSelection = prompt("Rock, Paper or Scissors?")
 computerSelection = getComputerChoice();
 if (playerSelection === computerSelection) {
-    return `It's a tie! You both picked ${playerSelection}`;
+    return `It's a tie! You both picked ${playerSelection} You: ${playerScore} Computer: ${computerScore} `;
 }
 
 else {
     if ((playerSelection === "Rock" && computerSelection === "Scissors") || 
         (playerSelection === "Paper" && computerSelection === "Rock") ||
         (playerSelection === "Scissors" && computerSelection === "Paper")) {
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            playerScore++
+            return `You win! ${playerSelection} beats ${computerSelection} You: ${playerScore} Computer: ${computerScore}`;
+
         }
 
     else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+        computerScore++
+        return `You lose! ${computerSelection} beats ${playerSelection} You: ${playerScore} Computer: ${computerScore}`
     }
 }
 }
 
-console.log(playRound())
+/* Game of 5 Rounds */
+let playerScore = 0 /*Scores are global variables*/
+let computerScore = 0
+
+function playGame() {
+    console.log(playRound())
+    console.log(playRound())
+    console.log(playRound())
+    console.log(playRound())
+    console.log(playRound())
+    
+    if (computerScore > playerScore) {
+       console.log("The computer wins!");
+    }
+
+    else if (computerScore === playerScore) {
+        console.log("It's a tie!");
+
+    }
+
+    else {
+        console.log("You win!");
+    }
+    }
+    
+playGame()
