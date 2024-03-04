@@ -1,0 +1,68 @@
+/*{border: 2px solid red;}*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', monospace;
+    color: #e7eaf6;
+    background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.Header, #Display {
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.Scoring, .Selection {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 10px;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+button {
+    font-size: 30px;
+    border-radius: 15px;
+    width: 150px;
+    height: 65px;
+    background-color: #e7eaf6;
+    border: 2px solid #e7eaf6;
+    box-shadow: 0 7px #999;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#Display {
+    font-size: 20px;
+    font-weight:700;
+    margin-top: 10px;
+}
+
+button:active {
+    background-color: #e7eaf6;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
+
+.Selection {
+    margin-bottom: 20px;
+}
+
+.Scoring {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
