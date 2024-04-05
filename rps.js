@@ -1,20 +1,11 @@
 /* Gets the computer's choice*/
 let computerSelection=getComputerChoice()
 
+const choices = ["Rock","Paper","Scissors"]
+
 function getComputerChoice () {
-    let random = Math.floor(Math.random() * 61);
-    if (random >= 0 && random <= 20) {
-        return "Rock";
+    return choices[Math.floor(Math.random()*choices.length)];
     }
-
-    else if (random >= 21 && random <= 40) {
-        return "Paper";
-    }
-
-    else {
-        return "Scissors";
-    }
-}
 
 /* Gets the player's choice */
 const rock = document.querySelector("#Rock")
