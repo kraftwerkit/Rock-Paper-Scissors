@@ -1,9 +1,8 @@
 /* Gets the computer's choice*/
 let computerSelection=getComputerChoice()
 
-const choices = ["Rock","Paper","Scissors"]
-
 function getComputerChoice () {
+    const choices = ["Rock","Paper","Scissors"]
     return choices[Math.floor(Math.random()*choices.length)];
     }
 
@@ -44,7 +43,7 @@ scissors.addEventListener("click", () => {
 /* A single round of RPS */
 function playRound (playerSelection,computerSelection) {
     
-    computerSelection = getComputerChoice();
+    computerSelection=getComputerChoice()
     if (playerSelection === computerSelection) {
         display.textContent=`It's a tie! You both picked ${playerSelection}.`;
     }
